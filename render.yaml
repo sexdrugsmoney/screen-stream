@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: screen-stream
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: AUTH_TOKEN
+        value: screen-stream-secret-123
