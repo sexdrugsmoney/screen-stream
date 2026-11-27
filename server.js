@@ -388,22 +388,28 @@ const ADMIN_PANEL_PRO = `<!DOCTYPE html>
     }
 
     .message-panel {
-      position: absolute;
-      bottom: 20px;
-      left: 20px;
+      position: fixed;
+      bottom: 30px;
+      left: 350px;
       background: rgba(10, 20, 50, 0.95);
       backdrop-filter: blur(10px);
       padding: 12px;
       border-radius: 12px;
-      border: 1px solid rgba(102, 126, 234, 0.3);
+      border: 2px solid #667eea;
       display: none;
-      z-index: 10;
+      z-index: 9999;
     }
 
     .message-panel.active {
       display: flex;
       gap: 6px;
       align-items: center;
+      animation: slideUp 0.3s ease-out;
+    }
+
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     #messageInput {
